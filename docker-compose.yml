@@ -60,9 +60,6 @@ services:
       - RKN_DB_USER=postgres
       - RKN_DB_PASSWORD=postgres
       - REKONO_HOME=/rekono
-      - DJANGO_SUPERUSER_EMAIL=${RKN_EMAIL:-rekono@rekono.com}
-      - DJANGO_SUPERUSER_USERNAME=${RKN_USERNAME:-rekono}
-      - DJANGO_SUPERUSER_PASSWORD=${RKN_PASSWORD:-rekono}
   
   tasks-worker:
     restart: always
@@ -154,10 +151,6 @@ services:
       - RKN_DB_USER=postgres
       - RKN_DB_PASSWORD=postgres
       - RKN_RQ_HOST=redis
-      - RKN_EMAIL_HOST=${RKN_EMAIL_HOST:-postfix}
-      - RKN_EMAIL_PORT=${RKN_EMAIL_PORT:-25}
-      - RKN_EMAIL_USER=${RKN_EMAIL_USER:-postfix}
-      - RKN_EMAIL_PASSWORD=${RKN_EMAIL_PASSWORD:-postfix}
       - RKN_FRONTEND_URL=${RKN_FRONTEND_URL:-httpS://127.0.0.1}
       - REKONO_HOME=/rekono
       - OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
@@ -253,10 +246,11 @@ services:
     hostname: nginx
     container_name: nginx
     ports:
-      - 80:80
-      - 443:443
+      - 803:80
+      - 4433:443
     volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /home/josh/letsencrypt/archive/npm-1/:/etc/nginx/keys:rw
     depends_on:
       backend:
         condition: service_healthy
