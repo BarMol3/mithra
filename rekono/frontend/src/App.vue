@@ -6,7 +6,7 @@
     </div>
     <footer class="text-muted text-center mb-2">
       <b-container>
-        <label>© 2022 Rekono Mantainers. All rights reserved</label>
+        <label>© 2023 scanable.io. All rights reserved</label>
       </b-container>
     </footer>
   </div>

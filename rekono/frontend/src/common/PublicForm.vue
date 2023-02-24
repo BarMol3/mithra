@@ -9,7 +9,7 @@
 <style>
 #public-page {
   height: 100%;
-  background-image: url('/static/background.jpg');
+  background-color: rgb(243, 245, 248);
   background-size: cover;
   background-repeat: no-repeat;
 }

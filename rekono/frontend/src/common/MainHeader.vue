@@ -19,7 +19,7 @@
           </b-dropdown-item>
           <b-dropdown-item href="/api/schema/swagger-ui.html?docExpansion=none" target="_blank">
             <b-icon variant="danger" icon="code-slash"/>
-            <label class="ml-2">Rekono API Rest</label>
+            <label class="ml-2">scanable API</label>
           </b-dropdown-item>
           <b-dropdown-item @click.native.prevent="logout">
             <b-icon variant="secondary" icon="box-arrow-right"/>

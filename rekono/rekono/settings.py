@@ -37,7 +37,11 @@ from rekono.environment import (ENV_REKONO_HOME, RKN_ALLOWED_HOSTS,
 ################################################################################
 
 DESCRIPTION = 'Execute full pentesting processes combining multiple hacking tools automatically'    # Rekono description
+<<<<<<< Updated upstream
 VERSION = '1.4.3'                                                               # Rekono version
+=======
+VERSION = '1.4.0'                                                               # Rekono version
+>>>>>>> Stashed changes
 TESTING = 'test' in sys.argv                                                    # Tests execution
 
 ################################################################################
@@ -292,7 +296,7 @@ if not TESTING:                                                                 
 # Documentation
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Rekono API Rest',
+    'TITLE': 'scanable API',
     'DESCRIPTION': DESCRIPTION,
     'VERSION': VERSION,
     'PREPROCESSING_HOOKS': [
@@ -371,7 +375,7 @@ RQ_QUEUES = {
 # Email                                                                        #
 ################################################################################
 
-DEFAULT_FROM_EMAIL = 'Rekono <noreply@rekono.com>'                              # Email from address
+DEFAULT_FROM_EMAIL = 'Admin <josh@scanable.io>'                              # Email from address
 EMAIL_HOST = os.getenv(RKN_EMAIL_HOST, CONFIG.EMAIL_HOST)                       # SMTP host
 EMAIL_PORT = os.getenv(RKN_EMAIL_PORT, CONFIG.EMAIL_PORT)                       # SMTP port
 EMAIL_HOST_USER = os.getenv(RKN_EMAIL_USER, CONFIG.EMAIL_USER)                  # User for auth in SMTP server

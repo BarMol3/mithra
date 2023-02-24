@@ -72,7 +72,7 @@
             <template #header>
               <b-button v-b-toggle.rekono-api variant="outline" @click="showRekonoApi = !showRekonoApi">
                 <b-icon variant="danger" icon="code-slash"/>
-                <strong class="ml-2 mr-2">Rekono API Rest</strong>
+                <strong class="ml-2 mr-2">scanable API</strong>
                 <b-icon v-if="!showRekonoApi" variant="secondary" icon="caret-down-fill"/>
                 <b-icon v-if="showRekonoApi" variant="secondary" icon="caret-up-fill"/>
               </b-button>
