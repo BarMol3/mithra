@@ -245,7 +245,7 @@ services:
       - 803:80
       - 4433:443
     volumes:
-      - /home/josh/letsencrypt/archive/npm-1/:/etc/nginx/keys:rw
+      - /home/josh/letsencrypt/archive/npm-3/:/etc/nginx/keys:rw
     depends_on:
       backend:
         condition: service_healthy
