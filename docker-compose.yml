@@ -59,6 +59,9 @@ services:
       - RKN_DB_USER=postgres
       - RKN_DB_PASSWORD=postgres
       - REKONO_HOME=/rekono
+      - DJANGO_SUPERUSER_EMAIL=${RKN_EMAIL:-admin@scanable.io}
+      - DJANGO_SUPERUSER_USERNAME=${RKN_USERNAME:-josh}
+      - DJANGO_SUPERUSER_PASSWORD=${RKN_PASSWORD:-Str0ntium}
   
   tasks-worker:
     restart: always
