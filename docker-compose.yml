@@ -44,7 +44,6 @@ services:
     restart: 'no'
     image: rekono-backend:latest
     command: sh -c "python manage.py migrate && python manage.py createsuperuser --no-input"
-    container_name: initialize
     volumes:
       - rekono:/rekono
     networks:
