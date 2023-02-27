@@ -135,26 +135,6 @@ services:
       - REKONO_HOME=/rekono
       - OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-  telegram-bot:
-    restart: on-failure
-    image: rekono-backend:latest
-    command: python manage.py telegram_bot
-    hostname: telegram_bot
-    volumes:
-      - rekono:/rekono
-    networks:
-      - internal
-      - external
-    depends_on:
-      - initialize
-      - redis
-    environment:
-      - RKN_DB_HOST=postgres
-      - RKN_DB_USER=postgres
-      - RKN_DB_PASSWORD=postgres
-      - RKN_RQ_HOST=redis
-      - REKONO_HOME=/rekono
-  
   backend:
     restart: always
     build:
