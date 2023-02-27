@@ -1,5 +1,5 @@
 frontend:
-  url: https://127.0.0.1
+  # url: https://127.0.0.1
 security:
   # secret-key: 
   allowed-hosts:
@@ -7,7 +7,7 @@ security:
     - localhost
     - ::1
 database:
-  name: rekono
+  # name: rekono
   # user:
   # password:
   host: 127.0.0.1
