@@ -26,19 +26,6 @@ services:
       - 6379
     networks:
       - internal
-  
-  postfix:
-    restart: always
-    image: catatnight/postfix:latest
-    hostname: postfix
-    expose:
-      - 25
-    networks:
-      - internal
-      - external
-    environment:
-      - maildomain=rekono.com
-      - smtp_user=postfix:postfix
 
   initialize:
     restart: 'no'
@@ -234,8 +221,8 @@ services:
     image: rekono-nginx:latest
     hostname: nginx
     ports:
-      - 803:80
-      - 4433:443
+      - 805:80
+      - 4435:443
     volumes:
       - /home/josh/letsencrypt/archive/npm-3/:/etc/nginx/keys:rw
     depends_on:
