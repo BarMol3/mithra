@@ -37,8 +37,6 @@ services:
       - internal
     depends_on:
       - postgres
-    env_file:
-      - stack.env
     environment:
       - RKN_DB_HOST=postgres
       - RKN_DB_USER=postgres
@@ -128,8 +126,6 @@ services:
     depends_on:
       - initialize
       - redis
-    env_file:
-      - stack.env
     environment:
       - RKN_DB_HOST=postgres
       - RKN_DB_USER=postgres
@@ -224,8 +220,8 @@ services:
     image: rekono-nginx:latest
     hostname: nginx
     ports:
-      - 805:80
-      - 4435:443
+      - ${HTTPPORT}:80
+      - ${HTTPSPORT}:443
     volumes:
       - /home/josh/letsencrypt/archive/npm-3/:/etc/nginx/keys:rw
     depends_on:
