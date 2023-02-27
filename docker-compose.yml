@@ -126,7 +126,6 @@ services:
     depends_on:
       - initialize
       - redis
-      - postfix
     environment:
       - RKN_DB_HOST=postgres
       - RKN_DB_USER=postgres
