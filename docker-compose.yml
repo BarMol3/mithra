@@ -242,8 +242,8 @@ services:
     hostname: nginx
     container_name: nginx
     ports:
-      - 803:80
-      - 4433:443
+      - 804:80
+      - 4434:443
     volumes:
       - /home/josh/letsencrypt/archive/npm-3/:/etc/nginx/keys:rw
     depends_on:
