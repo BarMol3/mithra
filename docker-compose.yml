@@ -126,6 +126,8 @@ services:
     depends_on:
       - initialize
       - redis
+    env_file:
+      - stack.env
     environment:
       - RKN_DB_HOST=postgres
       - RKN_DB_USER=postgres
