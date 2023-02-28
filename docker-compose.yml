@@ -68,6 +68,9 @@ services:
 
   executions-worker:
     restart: always
+    build:
+      context: .
+      dockerfile: docker/kali/Dockerfile
     image: flophype/scangine:latest
     command: python manage.py rqworker executions-queue
     hostname: executions-worker
@@ -134,6 +137,10 @@ services:
 
   backend:
     restart: always
+    build:
+      context: .
+      dockerfile: docker/rekono/Dockerfile
+      target: backend
     image: flophype/scanback:latest
     command: python manage.py runserver 0.0.0.0:8000
     hostname: backend
@@ -163,6 +170,10 @@ services:
   
   frontend:
     restart: always
+    build:
+      context: .
+      dockerfile: docker/rekono/Dockerfile
+      target: frontend
     image: flophype/scanfront:latest
     command: sh -c "serve -s dist"
     hostname: frontend
@@ -183,6 +194,9 @@ services:
 
   nginx:
     restart: always
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
     image: flophype/scanginx:latest
     hostname: nginx
     ports:
